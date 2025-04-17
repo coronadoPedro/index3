@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebAR con A-Frame y marcador Hiro</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.5.4/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs> -->
+      <!-- Cámara AR.js -->
+      <!-- <a-marker type="pattern" url="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@master/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt"> -->
+        <!-- Modelo OBJ + MTL -->
+        <!-- <a-entity 
+          obj-model="obj: url(modelJAGUAR/Jaguar.obj); mtl: url(modelJAGUAR/JaguarTextured.mtl);" 
+          scale="1 1 1"
+          position="0 0 0"
+        ></a-entity>
+      </a-marker>
+        <a-light type="ambient" color="#FFFFFF"></a-light>
+        <a-light type="directional" color="#FFFFFF" position="1 1 1"></a-light> -->
+
+      <!-- Cámara que se activa -->
+      <!-- <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebAR Test - Hiro</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.7/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      <!-- Luces -->
+      <a-light type="ambient" color="#FFFFFF"></a-light>
+      <a-light type="directional" color="#FFFFFF" position="1 1 1"></a-light>
+
+      <!-- Marcador Hiro con cubo -->
+      <a-marker type="pattern" url="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@master/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt">
+        <a-box color="red" position="0 0.5 0"></a-box>
+      </a-marker>
+
+      <!-- Cámara -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
