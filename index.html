@@ -34,9 +34,22 @@
     <title>WebAR Test - Hiro</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.7/aframe/build/aframe-ar.min.js"></script>
+
+     <style>
+        #video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
+
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene arjs="debugUIEnabled: true">
+    <a-scene embedded arjs="debugUIEnabled: true">
+
       <!-- Luces -->
       <a-light type="ambient" color="#FFFFFF"></a-light>
       <a-light type="directional" color="#FFFFFF" position="1 1 1"></a-light>
@@ -48,7 +61,10 @@
 
 
      <!-- MARCADOR-->
-      <a-marker-camera preset="hiro"></a-marker-camera>
+     <a-marker type="pattern" url="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@master/three.js/examples/marker-training/examples/pattern-files/pattern-hiro.patt">
+      <a-box color="blue" position="0 0.5 0"></a-box>
+    </a-marker>
+
       
       <!--Se usa un codigo mas simple en lugar de toda la etiqueta de a-marker-->  
       <a-box color="blue" position="0 0.5 -3"></a-box>
