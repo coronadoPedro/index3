@@ -54,8 +54,7 @@
     </a-scene>
       <script>
         console.log("El código HTML se está ejecutando correctamente.");
-      </script>
-    <script>
+      
       navigator.mediaDevices.getUserMedia({ video: true })
         .then(function(stream) {
         console.log("La cámara está activa");
@@ -63,7 +62,7 @@
         .catch(function(err) {
         console.error("Error al acceder a la cámara:", err);
   });
-</script>
+      </script>
 
   </body>
 </html>
