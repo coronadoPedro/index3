@@ -36,7 +36,7 @@
     <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.7/aframe/build/aframe-ar.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene arjs>
       <!-- Luces -->
       <a-light type="ambient" color="#FFFFFF"></a-light>
       <a-light type="directional" color="#FFFFFF" position="1 1 1"></a-light>
@@ -54,6 +54,8 @@
     </a-scene>
 
     <button onclick="navigator.mediaDevices.getUserMedia({ video: true })">Activar Cámara</button>
+    <video id="video" autoplay playsinline></video>
+
       <script>
         console.log("El código HTML se está ejecutando correctamente.");
       
@@ -64,15 +66,15 @@
         .catch(function(err) {
         console.error("Error al acceder a la cámara:", err);
   });
-
-         navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-          document.body.innerHTML += "<p>La cámara está funcionando</p>";
-  })
-        .catch(function(err) {
-          console.error("Error con la cámara:", err);
-  });
-
+            navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+        document.getElementById("video").srcObject = stream;
+        console.log("La cámara está transmitiendo correctamente.");
+    })
+    .catch(function(err) {
+        console.error("Error al acceder a la cámara:", err);
+    });
+  
       </script>
 
   </body>
