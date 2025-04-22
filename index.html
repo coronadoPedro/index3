@@ -52,6 +52,8 @@
       <!-- Cámara -->
       <a-entity camera></a-entity>
     </a-scene>
+
+    <button onclick="navigator.mediaDevices.getUserMedia({ video: true })">Activar Cámara</button>
       <script>
         console.log("El código HTML se está ejecutando correctamente.");
       
@@ -62,6 +64,15 @@
         .catch(function(err) {
         console.error("Error al acceder a la cámara:", err);
   });
+
+         navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          document.body.innerHTML += "<p>La cámara está funcionando</p>";
+  })
+        .catch(function(err) {
+          console.error("Error con la cámara:", err);
+  });
+
       </script>
 
   </body>
